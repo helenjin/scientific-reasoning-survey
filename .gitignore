@@ -1,0 +1,29 @@
+## LaTeX
+*.aux
+*.bbl
+*.bbl-SAVE-ERROR
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.toc
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.bcf
+*.run.xml
+
+## Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+## OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
