@@ -1,0 +1,10 @@
+Field,Meaning,Recommended Values,Coding Rule
+Reasoning Producer,Who authored or generated the explicit reasoning representation.,Domain expert; scientist; trained annotator; crowdworker; LLM; programmatic; source-derived; hybrid,"Code the producer of the reasoning, not the question or answer label."
+Reasoning Human-Checked?,Whether a human independently reviewed the explicit reasoning representation.,Yes; Partial; Source-derived; No; Not reported; N/A,Do not treat source-derived textbook/paper prose as independently checked reasoning.
+Reasoning Human-Check Details,Who reviewed the reasoning and what they checked.,Expert review; annotator review; adjudication; sampled audit; source only,"Record whether review covered correctness, grounding, completeness, or only formatting."
+Errors Included?,"Whether the released resource contains incorrect reasoning, incorrect claims, critiques, or corrections.",Yes; No; Mixed; To verify,Distinguish incorrect final answers from explicit incorrect reasoning traces.
+Error Origin,How the errors entered the resource.,Natural human error; model-generated; synthetic perturbation; adversarial injection; ambiguous evidence; revision over time,Natural and injected errors should not be pooled without qualification.
+Error Granularity,The smallest unit to which an error label applies.,Whole answer; claim; sentence; span; reasoning step; graph node/edge; decision; tool action; code line; hypothesis version,Step-level is only one possible granularity.
+Error Labels / Taxonomy,What information is provided about the error.,Binary correctness; first-error index; error type; critique; correction; alternative; severity,Record both localization and type when available.
+Errors Human-Checked?,"Whether humans verified the error's existence, location, or type.",Yes; Partial; No; Not reported; N/A,A human-checked correct trace does not imply human checking of synthetic corrupted variants.
+Evidence Confidence,Confidence in the current spreadsheet entry.,High; Medium; Low,High: explicit in paper abstract/page; Medium: supported but details need appendix; Low: provisional and requires full-paper verification.

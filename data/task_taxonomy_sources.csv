@@ -1,0 +1,10 @@
+Source,What it grounds,URL
+Qasper,Question answering over full scientific papers; paper comprehension setting,https://aclanthology.org/2021.naacl-main.365/
+SciFact,Scientific claim verification with evidence and rationales,https://aclanthology.org/2020.emnlp-main.609/
+WorldTree,Explanation graphs for science question answering,https://arxiv.org/abs/1802.03052
+EntailmentBank,Multi-step entailment trees,https://arxiv.org/abs/2104.08661
+BLADE,Scientific data-analysis decisions and execution,https://blade-bench.github.io/
+DiscoveryBench,Data-driven scientific discovery and hypothesis verification,https://proceedings.iclr.cc/paper_files/paper/2025/hash/0d70af566e69f1dfb687791ecf955e28-Abstract-Conference.html
+ScienceAgentBench,Executable scientific workflows for language agents,https://arxiv.org/abs/2410.05080
+SciCode,Scientist-curated scientific coding problems,https://arxiv.org/abs/2407.13168
+ThoughtSource,Repository and unified schema for reasoning datasets,https://doi.org/10.1038/s41597-023-02433-3

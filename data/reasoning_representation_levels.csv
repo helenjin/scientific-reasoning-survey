@@ -1,0 +1,7 @@
+Level,Definition,Typical Signals,Illustrative Examples,Important Note
+R0,"Final answer, label, score, or outcome only",Multiple-choice answer; numerical result; verdict,ARC; GPQA,May test reasoning without exposing the process.
+R1,Supporting evidence or relevant facts without an explicit inference trace,Evidence spans; cited sentences; supporting facts,SciFact; Qasper evidence,Evidence is not automatically an explanation.
+R2,"Free-text explanation, rationale, worked solution, or derivation",Rationale; ideal answer; worked solution,ScienceQA; MedExQA,A correct explanation may be post hoc or unfaithful.
+R3,Structured reasoning representation,Entailment tree; explanation graph; argument structure,WorldTree; EntailmentBank,Structure may be normative rather than process-faithful.
+R4,"Executable, interactive, or workflow-level process supervision",Code; tool calls; actions; intermediate states,ScienceAgentBench; SciCode,Execution success does not guarantee scientific validity.
+R5,"Error-, critique-, alternative-, correction-, or revision-aware supervision",Incorrect steps; critiques; repairs; revised hypotheses,eQASC-Perturbed; ProjectionBench,"R5 is a distinct meta-reasoning signal, not a universal quality ranking."

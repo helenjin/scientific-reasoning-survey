@@ -1,0 +1,10 @@
+Dimension,Question It Answers,Suggested Values / Examples,Important Distinction
+Primary Task,What scientific operation is the model expected to complete?,QA; claim verification; paper comprehension; explanation/proof generation; data analysis; hypothesis discovery/verification; workflow execution,Task describes the objective and expected output.
+Secondary Task / Variant,What narrower operation or variant is involved?,Evidence retrieval; diagnosis; equation discovery; hypothesis ranking; error detection,Use this for specificity without proliferating primary categories.
+Scientific Domain,Where is the task situated?,Medicine; biology; chemistry; physics; materials science; multidisciplinary,Domain is not a task.
+Modality,What forms of information are provided or produced?,Text; image; table; code; graph; molecular structure; mixed,Multimodality is not a task.
+Interaction Setting,How does the system act while solving the task?,Static; staged; executable; tool-using; agentic; interactive,"Agenticity is a solution setting, not the scientific objective."
+Resource Type,What kind of resource is this?,Evaluation benchmark; training dataset; benchmark suite; repository/meta-dataset,Training resources and repositories are not tasks.
+Reasoning Capability,What kind of inference is required?,Deduction; induction; abduction; causal; mechanistic; quantitative; statistical,Capability and task may cut across one another.
+Reasoning Representation,What explicit form of reasoning is exposed?,Evidence; rationale; worked solution; entailment tree; graph; code; workflow; critique; revision,Representation is the survey's central analytic dimension.
+Supervision Level,How much explicit process information is available?,R0 final answer; R1 evidence; R2 rationale; R3 structure; R4 workflow; R5 critique/revision,"This is a proposed analytical abstraction, not an established literature standard."

@@ -1,0 +1,17 @@
+Resource,Year,Why Added,Reasoning Producer,Human-Checked?,Error Granularity,Paper URL
+SciGen,2021,Scientific table description grounded in numerical relations,Scientific-paper authors + automatic extraction,Source-derived / partial,N/A,https://openreview.net/forum?id=Jul-uX7EV_I
+ClimateViz,2025,Structured knowledge-graph explanation,Expert-curated sources + structured construction,Partial / yes,Claim and graph-relation level,https://aclanthology.org/2025.emnlp-main.1196/
+CGBench,2025,Human explanation / evidence interpretation,Clinical genetics experts via ClinGen,Yes,Response / evidence-interpretation level,https://proceedings.neurips.cc/paper_files/paper/2025/hash/19138f8392f7863f483e90e1c2819fc9-Abstract-Datasets_and_Benchmarks_Track.html
+BMMR,2025,High-quality reasoning path,Automated pipeline with human-in-the-loop curation,Yes,Step / process level,https://proceedings.neurips.cc/paper_files/paper/2025/hash/5acd3c628aa1819fbf07c39ef73e7285-Abstract-Datasets_and_Benchmarks_Track.html
+ReasonMed,2025,Detailed chain-of-thought + answer summary,Multiple LLM agents,No systematic human checking reported,Error-prone step / reasoning-path level,https://aclanthology.org/2025.emnlp-main.1344/
+MEDEC,2025,Erroneous clinical text + correction,Human / clinical-data construction (verify exact annotators),N/A,Clinical statement / note segment,https://aclanthology.org/2025.findings-acl.1159/
+SciMDR,2026,Explicit reasoning chain,LLM synthesis + programmatic regrounding; experts for evaluation set,Partial,N/A,https://aclanthology.org/2026.acl-long.2070/
+SymPyBench,2026,Structured steps + executable Python,Programmatic synthetic generation,No / not reported,N/A,https://aclanthology.org/2026.eacl-industry.8/
+FormulaReasoning,2026,Formula structure and fine-grained parameter annotations,Human annotators with LLM-assisted validation,Yes,N/A,https://aclanthology.org/2026.findings-acl.1580/
+RADAR,2026,Reasoning steps + evidence attribution,Semi-automatic construction with annotation,Partial / unclear,N/A,https://aclanthology.org/2026.findings-eacl.299/
+PRMBench-V,2026,Erroneous step with error type,Semi-automated generation + human verification,N/A,Step-level,https://aclanthology.org/2026.acl-long.2068/
+ReFACT,2026,Answer with positional error spans,Domain experts,N/A,Span-level,https://aclanthology.org/2026.eacl-long.381/
+MedErrBench,2026,Erroneous medical text + localized correction,Clinical experts,N/A,Localized text span / error instance,https://aclanthology.org/2026.findings-acl.573/
+MMErroR,2026,Reasoning chain with one coherent error,Constructed benchmark; annotator details to verify,N/A,Single error within a reasoning process; localization details to verify,https://aclanthology.org/2026.acl-long.2083/
+ProcessBench,2025,Step-by-step solution with first error location,Frontier model outputs + human experts,N/A,Step-level; earliest-error index,https://aclanthology.org/2025.acl-long.50/
+Hard2Verify,2026,Proof with step labels / first-error annotation,Frontier LLMs + human annotators,N/A,Step-level and first-error localization,https://aclanthology.org/2026.acl-long.1031/

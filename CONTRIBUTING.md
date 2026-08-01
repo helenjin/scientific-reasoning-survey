@@ -4,16 +4,19 @@ PRs adding relevant datasets/benchmarks are welcome.
 
 ## Adding an entry
 
-1. Add your entry to [`PAPERS.md`](PAPERS.md) under `## Entries`, following
-   the format documented at the top of that file.
-2. Fill in as many of the `domain` / `construction` / `representation` /
-   `validation` / `errors` tags as you can from a skim of the paper; leave
-   the rest as `?`.
-3. One entry per dataset/benchmark. If a paper introduces more than one,
+1. Add a row to [`data/inventory.csv`](data/inventory.csv), following its
+   existing columns (task, domain, modality, reasoning representation,
+   supervision level, construction, validation, error-annotation fields,
+   etc.) — see [`TAXONOMY.md`](TAXONOMY.md) for what each column means and
+   the recommended values.
+2. Fill in as many fields as you can from a skim of the paper; use `N/A`
+   for fields that don't apply and leave genuinely unknown fields blank
+   rather than guessing.
+3. One row per dataset/benchmark. If a paper introduces more than one,
    add each separately.
-4. Open a PR. No need to sort into a category — sorting into the final
-   taxonomy happens separately once we've settled it (see
-   [`TAXONOMY.md`](TAXONOMY.md)).
+4. Open a PR. No need to pre-sort into a category — the public-facing
+   grouping is applied separately once the top-level organization is
+   settled (see the open decision noted in [`TAXONOMY.md`](TAXONOMY.md)).
 
 ## Scope
 

@@ -35,16 +35,30 @@ research directions.
 ## Contents
 
 - [Datasets & Benchmarks](#datasets--benchmarks)
+- [Taxonomy](#taxonomy)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Datasets & Benchmarks
 
-We're still compiling the list — see [`PAPERS.md`](PAPERS.md) for the
-current (unsorted) working collection. Once we have enough entries, we'll
-settle on a top-level taxonomy (candidates logged in
-[`TAXONOMY.md`](TAXONOMY.md)) and this section will list them sorted
-accordingly.
+The full, flat list of coded datasets/benchmarks lives in
+[`data/inventory.csv`](data/inventory.csv) (61 entries as of writing) — one
+row per resource, coded across task, domain, modality, reasoning
+representation, construction, validation, and error-annotation fields (see
+[Taxonomy](#taxonomy)).
+
+A public-facing sorted/rendered version of this list (e.g. grouped by domain
+or by reasoning-representation level) will replace this section once the
+top-level organization is settled — see the open decision noted at the
+bottom of [`TAXONOMY.md`](TAXONOMY.md).
+
+## Taxonomy
+
+The coding scheme used to annotate `data/inventory.csv` — reasoning
+representation levels (R0–R5), per-entry coding dimensions, task
+definitions, and error-annotation fields — is documented in
+[`TAXONOMY.md`](TAXONOMY.md), backed by machine-readable CSVs under
+[`data/`](data/).
 
 ## Contributing
 

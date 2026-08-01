@@ -27,3 +27,6 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+
+## Working spreadsheet (source for data/*.csv — kept local, not tracked)
+data/*.xlsx
