@@ -43,6 +43,68 @@ Per-entry fields coded in `data/inventory.csv`, beyond the R0–R5 level:
 | Reasoning Capability | What kind of inference is required? | Deduction; induction; abduction; causal; mechanistic; quantitative; statistical | Capability and task may cut across one another. |
 | Reasoning Representation | What explicit form of reasoning is exposed? | Evidence; rationale; worked solution; entailment tree; graph; code; workflow; critique; revision | The survey's central analytic dimension (see R0–R5 above). |
 | Supervision Level | How much explicit process information is available? | R0–R5 | A proposed analytical abstraction, not an established standard. |
+| Scale | How large is the resource? | Question/example count; instance count; problems; hours (as reported by the source) | Report the resource's own reported scale metric; don't normalize across resources that use different units. |
+| Construction & Grounding | How was the resource — and its reasoning representation — built? | Expert-authored; sourced from textbooks/papers; automatically generated/extracted; human-in-the-loop pipeline; synthetic perturbation | Describes provenance of the data itself; whether that data was later checked is a separate question (see General Validation and Reasoning Human-Checked?). |
+| General Validation | What quality-control process was applied to the resource as a whole? | Expert annotation; human-in-the-loop curation; execution-based checks; automated multi-agent verification; expert rubric-based grading | Distinct from Reasoning Human-Checked? and Errors Human-Checked?, which are specific to whether the reasoning trace or error labels (not the resource generally) were checked. |
+| Best-Supported Use | What is this resource most defensibly used for, given how it's actually coded? | e.g. "Biomedical answer and explanation generation"; "Multi-hop evidence composition" | A scoped, evidence-backed recommendation — not a claim about every possible downstream use of the resource. |
+| Key Limitation | What is the main caveat a reader should know before relying on this resource's reasoning signal? | e.g. partial explanation coverage; unverified provenance; answer-conditioned explanations; normative rather than process-faithful structure | Name the specific limitation found during verification; don't just restate the Supervision Level. |
+| Inclusion Status | Does this entry clear the survey's scope bar for explicit scientific reasoning, and how confidently? | Include; Likely include; Borderline; Training resource only | Derived mechanically from Supervision Level, not an independent judgment call — see "Inclusion status is derived from Supervision Level" below for the full rule. |
+
+## Inclusion status is derived from Supervision Level
+
+`Inclusion Status` looks like a separate judgment call per entry, but it's
+actually mostly determined by `Supervision Level`:
+
+- **Pure R0** (every item in the resource is final-answer-only — no
+  reasoning representation anywhere) → **out of scope, removed from
+  `data/inventory.csv` entirely**. The survey characterizes *explicit
+  scientific reasoning*; a resource with nothing on that dimension has
+  nothing to characterize, so it doesn't get a coded row, even if it's a
+  well-known benchmark. See "Excluded: no explicit reasoning" below for the
+  record of what was removed and why.
+- **Mixed R0/R1+** (some real, verified subset carries an explicit
+  reasoning representation, even if most items don't) → stays in the
+  inventory as **Borderline** or better (Likely include / Include). A
+  partial signal still counts.
+- **R1 and above, verified** → **Include** or **Likely include**, per how
+  well-verified the representation and its construction/validation are.
+
+Practically: when verifying a Borderline/Low-confidence row, if the
+verification lands the entry on *pure* R0, remove it from
+`data/inventory.csv` and add it to the excluded list below — don't leave it
+in the CSV under a "Historical context only" label and don't treat removal
+as a fresh judgment call each time.
+
+A related, differently-motivated category: **Training resource only**
+(e.g. MegaScience, TextbookReasoning) — these *do* carry real reasoning
+representations (R2/R3) and stay in the inventory; they're just flagged
+because they're training data rather than evaluation benchmarks, which is a
+different exclusion reason (resource type, not missing reasoning) — don't
+remove these the way pure-R0 entries are removed.
+
+## Excluded: no explicit reasoning
+
+These were checked and found to be pure R0 (final-answer-only, nothing on
+the survey's central dimension), then removed from `data/inventory.csv`
+per the rule above. Kept here — not as coded rows — so the paper can
+acknowledge the scope boundary by name (a sentence in intro/related-work,
+not a data table) without a reader wondering if a well-known benchmark was
+simply overlooked:
+
+- **ARC** (2018) — multiple-choice science QA; final answer only.
+- **MedQA** (2020) — multiple-choice medical QA; final answer only.
+- **GPQA** (2023) — graduate-level science QA; final answer only.
+- **OpenBookQA** (2018) — the per-question fact link exists only in a
+  separate file the dataset's own repo calls "Oracle knowledge — a
+  hypothetical setting," not the standard train/dev/test split anyone
+  evaluates on.
+- **TheoremQA** (2023) — public release schema is question/answer/type
+  only; no solution or rationale field exists.
+- **MaCBench** (2024) — dataset card states explicitly: "questions include
+  final answers without rationales."
+- **SciTab** (2023) — only the verdict label ships; no evidence-span or
+  cell-level annotation is released, despite the task's table-reasoning
+  framing.
 
 ## Task taxonomy
 
@@ -61,11 +123,11 @@ or corrections — see [`reasoning_error_guide.csv`](data/reasoning_error_guide.
 for full definitions and coding rules: Reasoning Producer, Reasoning
 Human-Checked?, Reasoning Human-Check Details, Errors Included?, Error
 Origin, Error Granularity, Error Labels/Taxonomy, Errors Human-Checked?,
-Evidence Confidence.
+Error Human-Check Details, Evidence Confidence.
 
 ## Open decision: top-level organization of the README
 
-`data/inventory.csv` is the flat source of truth (61 entries as of writing).
+`data/inventory.csv` is the flat source of truth (54 entries as of writing).
 Not yet decided: which dimension the README's public-facing list should be
 *sorted by* — candidates are Scientific Domain, Primary Task, or Supervision
 Level (R0–R5). Revisit once it's clear which split avoids both single-entry

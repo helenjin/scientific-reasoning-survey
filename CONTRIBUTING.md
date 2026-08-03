@@ -23,4 +23,8 @@ PRs adding relevant datasets/benchmarks are welcome.
 In scope: datasets and benchmarks that involve **explicit** scientific
 reasoning — i.e., the reasoning process itself (not just the final answer)
 is represented, supervised, or evaluated in some way. General QA/knowledge
-benchmarks without an explicit reasoning component are out of scope.
+benchmarks without an explicit reasoning component (pure R0 — see
+[`TAXONOMY.md`](TAXONOMY.md)) are out of scope: don't add them as a coded
+row, even if well-known. If you're unsure whether something clears the
+bar, add it anyway with `Evidence Confidence: Low` and note the doubt in
+`Key Limitation` — verification during review will resolve it.
