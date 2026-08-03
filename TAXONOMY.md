@@ -105,6 +105,11 @@ simply overlooked:
 - **SciTab** (2023) — only the verdict label ships; no evidence-span or
   cell-level annotation is released, despite the task's table-reasoning
   framing.
+- **SciEval** (2024) — objective questions (multiple-choice/fill-in-blank/
+  judgment) are final-answer-only; the "subjective" experimental-data
+  questions are graded manually by the paper's own authors with no
+  released rubric, reference answer, or reasoning trace a downstream user
+  could access.
 
 ## Task taxonomy
 
@@ -120,14 +125,25 @@ Scientific coding or workflow execution, Repository/infrastructure.
 
 Per-entry fields used when a resource includes incorrect reasoning, critiques,
 or corrections — see [`reasoning_error_guide.csv`](data/reasoning_error_guide.csv)
-for full definitions and coding rules: Reasoning Producer, Reasoning
-Human-Checked?, Reasoning Human-Check Details, Errors Included?, Error
-Origin, Error Granularity, Error Labels/Taxonomy, Errors Human-Checked?,
-Error Human-Check Details, Evidence Confidence.
+for full definitions and coding rules: Reasoning Producer, Reasoning Producer
+Details, Reasoning Human-Checked?, Reasoning Human-Check Details, Errors
+Included?, Error Origin, Error Granularity, Error Labels/Taxonomy, Errors
+Human-Checked?, Error Human-Check Details, Evidence Confidence.
+
+`Reasoning Producer`'s recommended values fold "scientist" into `Domain
+expert` — both mean someone with genuine subject-matter expertise in the
+resource's specific field, whether their day job is research or clinical
+practice. Only code `Domain expert` when that field-specific expertise is
+actually confirmed (a physicist for a physics benchmark, a clinician for a
+clinical one) — a generalist annotator or an expert in an unrelated field
+doesn't qualify, and free-text nuance about the producer that doesn't fit
+the standardized category (a named source, a sourcing caveat, an
+uncertainty) belongs in `Reasoning Producer Details`, not in `Reasoning
+Producer` itself.
 
 ## Open decision: top-level organization of the README
 
-`data/inventory.csv` is the flat source of truth (54 entries as of writing).
+`data/inventory.csv` is the flat source of truth (53 entries as of writing).
 Not yet decided: which dimension the README's public-facing list should be
 *sorted by* — candidates are Scientific Domain, Primary Task, or Supervision
 Level (R0–R5). Revisit once it's clear which split avoids both single-entry

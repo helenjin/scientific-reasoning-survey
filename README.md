@@ -42,7 +42,7 @@ research directions.
 ## Datasets & Benchmarks
 
 The full, flat list of coded datasets/benchmarks lives in
-[`data/inventory.csv`](data/inventory.csv) (54 entries as of writing) — one
+[`data/inventory.csv`](data/inventory.csv) (53 entries as of writing) — one
 row per resource, coded across task, domain, modality, reasoning
 representation, construction, validation, and error-annotation fields (see
 [Taxonomy](#taxonomy)).

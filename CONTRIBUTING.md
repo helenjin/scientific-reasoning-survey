@@ -18,6 +18,25 @@ PRs adding relevant datasets/benchmarks are welcome.
    grouping is applied separately once the top-level organization is
    settled (see the open decision noted in [`TAXONOMY.md`](TAXONOMY.md)).
 
+## Style conventions for coded fields
+
+- Narrow categorical fields (`Primary Task`, `Secondary Task / Variant`,
+  `Scientific Domain`, `Modality`, `Interaction Setting`, `Resource Type`,
+  `Reasoning Capability`, `Reasoning Producer`, `Supervision Level`) — short
+  noun-phrase fragments, no terminal period. E.g. `Multi-hop reasoning`, not
+  `The resource requires multi-hop reasoning.`
+- Explanatory free-text fields (`Construction & Grounding`, `General
+  Validation`, `Reasoning Producer Details`, `Reasoning Human-Check
+  Details`, `Error Human-Check Details`, `Best-Supported Use`, `Key
+  Limitation`) — full sentences with terminal periods.
+- Express "not independently verified" with one canonical phrase — e.g.
+  "No independent verification reported" — rather than switching between
+  "unclear," "to verify," "not reported," and similar ad hoc phrasings
+  across rows.
+- `To verify` / `To code` are temporary placeholders for a row still being
+  drafted, not a final coded value. Resolve them to a real value (or leave
+  genuinely blank per the rule above) before the row is considered checked.
+
 ## Scope
 
 In scope: datasets and benchmarks that involve **explicit** scientific
@@ -28,3 +47,11 @@ benchmarks without an explicit reasoning component (pure R0 — see
 row, even if well-known. If you're unsure whether something clears the
 bar, add it anyway with `Evidence Confidence: Low` and note the doubt in
 `Key Limitation` — verification during review will resolve it.
+
+Also out of scope: tools, aggregators, or interfaces that surface or
+standardize *other* datasets' reasoning without contributing new reasoning
+content of their own (e.g. ThoughtSource) — cite these as related
+work/infrastructure if relevant, don't add them as inventory rows. This is
+different from training-resource-only entries (MegaScience,
+TextbookReasoning), which stay in because they carry genuinely new
+reasoning representations.
