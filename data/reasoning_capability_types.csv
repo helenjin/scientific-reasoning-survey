@@ -1,0 +1,10 @@
+Value,Level,Definition,Typical Signals,Illustrative Example
+Mechanistic,Content,Reasoning through the step-by-step physical/chemical/biological pathway by which an effect occurs -- not just that it occurs,Pathway explanation; step-by-step process account,ProtocolQA2 (LABBench2) explaining phase-separation chemistry to diagnose a failed RNA extraction
+Causal,Content,Establishing that one variable influences another (a cause-effect link) without necessarily detailing the pathway,Causal claim; intervention/counterfactual comparison,Data-driven cause-effect claims in SDABench's causal-reasoning tasks
+Deduction,Process,Deriving a conclusion that necessarily follows from given premises or facts,Entailment; logical derivation from stated facts,EntailmentBank's multi-step entailment trees
+Induction,Process,Generalizing a pattern or rule from specific observations or data,Pattern generalization; rule inferred from examples,Hypothesis formation from data in DiscoveryBench-style tasks
+Abduction,Process,Inferring the most plausible explanation for an observation among competing hypotheses,Best-explanation inference; differential diagnosis,Likely-cause inference in error-diagnosis tasks (e.g. MedErrBench)
+Quantitative,Process,"Numeric calculation, computation, or derivation",Formula application; numeric derivation,FormulaReasoning; SciBench worked solutions
+Statistical,Process,"Reasoning involving probability, statistical inference, or conclusions drawn from data distributions",Probability estimate; statistical test/inference,Inferential/predictive tasks in SDABench
+Evidence evaluation / synthesis,Process,"Assessing, weighing, or combining multiple pieces of evidence to support or refute a claim, without necessarily deducing new facts",Evidence aggregation; support/refute judgment,SciFact claim verification; BioASQ Ideal Answers
+Methodological / experimental-design critique,Process,"Judging whether a study's or protocol's design constitutes valid or sufficient support for a claim, or would produce a viable outcome",Validity judgment; design-flaw identification,SourceQualQA (LABBench2) judging why a study's design doesn't support a claim

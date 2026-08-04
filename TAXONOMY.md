@@ -9,11 +9,70 @@ canonical.
 Machine-readable source of truth for everything below lives in `data/`:
 [`coding_dimensions.csv`](data/coding_dimensions.csv),
 [`reasoning_representation_levels.csv`](data/reasoning_representation_levels.csv),
+[`reasoning_capability_types.csv`](data/reasoning_capability_types.csv),
 [`task_taxonomy.csv`](data/task_taxonomy.csv) (+
 [`task_taxonomy_sources.csv`](data/task_taxonomy_sources.csv)),
 [`reasoning_error_guide.csv`](data/reasoning_error_guide.csv), and
 [`excluded_resources.csv`](data/excluded_resources.csv). This file is a
 human-readable rendering of those.
+
+## What counts as scientific reasoning
+
+"Scientific reasoning" conflates two independent bars that are easy to
+mistake for one another:
+
+1. **Task grounding** — is the *task* scientific? This is what `Primary
+   Task` encodes (question answering, claim verification, paper
+   comprehension, explanation/proof generation, data analysis, hypothesis
+   discovery/verification, scientific coding or workflow execution).
+2. **Reasoning exposure** — is the *reasoning process* explicit? This is
+   the R0–R5 ladder above.
+
+The part that's easy to get wrong: bar (2) does **not** require the
+exposed reasoning to be about a mechanism (why a reaction proceeds, why a
+drug works). Reasoning that supports a scientific task — evidence
+retrieval and synthesis, methodological/experimental-design critique
+(is this study's design valid support for a claim?), or error diagnosis —
+counts as scientific reasoning here, provided the task itself is genuinely
+scientific and the process is explicit. Reasoning about mechanism/causation
+directly is one kind of scientific reasoning this survey covers, not the
+only kind.
+
+This split has a real basis in the cognitive-science literature on
+scientific reasoning: Zimmerman (2000) distinguishes a **process level**
+(domain-general inquiry activities — hypothesis generation, experimentation,
+evidence evaluation) from a **content level** (domain-specific conceptual
+knowledge about the phenomenon itself), and Klahr & Dunbar's (1988) "Scientific
+Discovery as Dual Search" (SDDS) model frames scientific reasoning as search
+across a hypothesis space and an experiment space — explicitly the interplay
+of domain-specific content knowledge with domain-general process skill,
+not one alone. `Reasoning Capability`'s values are split along this same
+line — see [`reasoning_capability_types.csv`](data/reasoning_capability_types.csv)
+and the table below.
+
+## Reasoning capability types
+
+What kind of inference `Reasoning Capability` records, split into
+content-level (about the phenomenon itself) and process-level (domain-general
+scientific-inquiry skill applied to a scientific task) per the literature
+grounding above:
+
+| Value | Level | Definition | Illustrative example |
+|---|---|---|---|
+| Mechanistic | Content | Reasoning through the step-by-step physical/chemical/biological pathway by which an effect occurs — not just that it occurs | ProtocolQA2 (LABBench2) explaining phase-separation chemistry to diagnose a failed RNA extraction |
+| Causal | Content | Establishing that one variable influences another (a cause-effect link) without necessarily detailing the pathway | Data-driven cause-effect claims in SDABench's causal-reasoning tasks |
+| Deduction | Process | Deriving a conclusion that necessarily follows from given premises or facts | EntailmentBank's multi-step entailment trees |
+| Induction | Process | Generalizing a pattern or rule from specific observations or data | Hypothesis formation from data in DiscoveryBench-style tasks |
+| Abduction | Process | Inferring the most plausible explanation for an observation among competing hypotheses | Likely-cause inference in error-diagnosis tasks (e.g. MedErrBench) |
+| Quantitative | Process | Numeric calculation, computation, or derivation | FormulaReasoning; SciBench worked solutions |
+| Statistical | Process | Reasoning involving probability, statistical inference, or conclusions drawn from data distributions | Inferential/predictive tasks in SDABench |
+| Evidence evaluation / synthesis | Process | Assessing, weighing, or combining multiple pieces of evidence to support or refute a claim, without necessarily deducing new facts | SciFact claim verification; BioASQ Ideal Answers |
+| Methodological / experimental-design critique | Process | Judging whether a study's or protocol's design constitutes valid or sufficient support for a claim, or would produce a viable outcome | SourceQualQA (LABBench2) judging why a study's design doesn't support a claim |
+
+Mechanistic reasoning is causal reasoning with the pathway made explicit —
+every mechanistic case is causal, but not every causal case bothers to
+explain the mechanism (e.g. a purely statistical/correlational
+causal-inference task wouldn't need mechanistic detail).
 
 ## Reasoning representation levels (R0–R5)
 
@@ -41,7 +100,7 @@ Per-entry fields coded in `data/inventory.csv`, beyond the R0–R5 level:
 | Modality | What forms of information are provided or produced? | Text; image; table; code; graph; molecular structure; mixed | Multimodality is not a task. |
 | Interaction Setting | How does the system act while solving the task? | Static; staged; executable; tool-using; agentic; interactive | Agenticity is a solution setting, not the scientific objective. |
 | Resource Type | What kind of resource is this? | Evaluation benchmark; training dataset; benchmark suite; repository/meta-dataset | Training resources and repositories are not tasks. |
-| Reasoning Capability | What kind of inference is required? | Deduction; induction; abduction; causal; mechanistic; quantitative; statistical | Capability and task may cut across one another. |
+| Reasoning Capability | What kind of inference is required? | Deduction; induction; abduction; causal; mechanistic; quantitative; statistical; evidence evaluation/synthesis; methodological/experimental-design critique | Capability and task may cut across one another. Splits into Content-level (mechanistic, causal) and Process-level (the rest) — see "Reasoning capability types" above. |
 | Reasoning Representation | What explicit form of reasoning is exposed? | Evidence; rationale; worked solution; entailment tree; graph; code; workflow; critique; revision | The survey's central analytic dimension (see R0–R5 above). |
 | Supervision Level | How much explicit process information is available? | R0–R5 | A proposed analytical abstraction, not an established standard. |
 | Scale | How large is the resource? | Question/example count; instance count; problems; hours (as reported by the source) | Report the resource's own reported scale metric; don't normalize across resources that use different units. |

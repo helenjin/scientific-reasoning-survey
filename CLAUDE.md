@@ -17,11 +17,11 @@ here is editing CSVs and Markdown, not writing software.
   reasoning representation, construction, validation, error-annotation
   fields, etc.). Currently 53 entries.
 - `data/coding_dimensions.csv`, `data/reasoning_representation_levels.csv`,
-  `data/task_taxonomy.csv` + `data/task_taxonomy_sources.csv`,
-  `data/reasoning_error_guide.csv`, `data/excluded_resources.csv` —
-  machine-readable definitions backing `TAXONOMY.md`. `TAXONOMY.md` is a
-  human-readable rendering of these; if you edit the taxonomy, keep both
-  in sync.
+  `data/reasoning_capability_types.csv`, `data/task_taxonomy.csv` +
+  `data/task_taxonomy_sources.csv`, `data/reasoning_error_guide.csv`,
+  `data/excluded_resources.csv` — machine-readable definitions backing
+  `TAXONOMY.md`. `TAXONOMY.md` is a human-readable rendering of these; if
+  you edit the taxonomy, keep both in sync.
 - `data/new_resources_added.csv` — running log of resources added beyond
   the original inventory pass. `data/excluded_resources.csv` is its
   counterpart: one row per resource removed from `inventory.csv` under
