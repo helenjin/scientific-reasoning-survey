@@ -1,0 +1,9 @@
+Dataset / Benchmark,Year,Reason for Exclusion,Paper / Project URL
+ARC,2018,Multiple-choice science QA; final answer only.,https://arxiv.org/abs/1803.05457
+MedQA,2020,Multiple-choice medical QA; final answer only.,https://arxiv.org/abs/2009.13081
+GPQA,2023,Graduate-level science QA; final answer only.,https://arxiv.org/abs/2311.12022
+OpenBookQA,2018,"The per-question fact link exists only in a separate file the dataset's own repo calls ""Oracle knowledge -- a hypothetical setting,"" not the standard train/dev/test split anyone evaluates on.",https://arxiv.org/abs/1809.02789
+TheoremQA,2023,Public release schema is question/answer/type only; no solution or rationale field exists.,https://arxiv.org/abs/2305.12524
+MaCBench,2024,"Dataset card states explicitly: ""questions include final answers without rationales.""",https://huggingface.co/datasets/jablonkagroup/MaCBench
+SciTab,2023,Only the verdict label ships; no evidence-span or cell-level annotation is released despite the task's table-reasoning framing.,https://arxiv.org/abs/2305.13186
+SciEval,2024,"Objective questions (multiple-choice/fill-in-blank/judgment) are final-answer-only; the ""subjective"" experimental-data questions are graded manually by the paper's own authors with no released rubric, reference answer, or reasoning trace a downstream user could access.",https://arxiv.org/abs/2308.13149

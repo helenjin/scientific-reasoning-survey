@@ -15,14 +15,17 @@ here is editing CSVs and Markdown, not writing software.
 - `data/inventory.csv` — the flat source of truth: one row per included
   dataset/benchmark, coded across ~28 columns (task, domain, modality,
   reasoning representation, construction, validation, error-annotation
-  fields, etc.). Currently 54 entries.
+  fields, etc.). Currently 53 entries.
 - `data/coding_dimensions.csv`, `data/reasoning_representation_levels.csv`,
   `data/task_taxonomy.csv` + `data/task_taxonomy_sources.csv`,
-  `data/reasoning_error_guide.csv` — machine-readable definitions backing
-  `TAXONOMY.md`. `TAXONOMY.md` is a human-readable rendering of these; if
-  you edit the taxonomy, keep both in sync.
+  `data/reasoning_error_guide.csv`, `data/excluded_resources.csv` —
+  machine-readable definitions backing `TAXONOMY.md`. `TAXONOMY.md` is a
+  human-readable rendering of these; if you edit the taxonomy, keep both
+  in sync.
 - `data/new_resources_added.csv` — running log of resources added beyond
-  the original inventory pass.
+  the original inventory pass. `data/excluded_resources.csv` is its
+  counterpart: one row per resource removed from `inventory.csv` under
+  the pure-R0 exclusion rule, with the reason and source link.
 - `data/scientific_reasoning_resources_expanded.xlsx` — the original
   working spreadsheet these CSVs were generated from. Gitignored (`data/*.xlsx`
   in `.gitignore`) — treat it as a local-only source artifact, not something

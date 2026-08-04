@@ -10,8 +10,9 @@ Machine-readable source of truth for everything below lives in `data/`:
 [`coding_dimensions.csv`](data/coding_dimensions.csv),
 [`reasoning_representation_levels.csv`](data/reasoning_representation_levels.csv),
 [`task_taxonomy.csv`](data/task_taxonomy.csv) (+
-[`task_taxonomy_sources.csv`](data/task_taxonomy_sources.csv)), and
-[`reasoning_error_guide.csv`](data/reasoning_error_guide.csv). This file is a
+[`task_taxonomy_sources.csv`](data/task_taxonomy_sources.csv)),
+[`reasoning_error_guide.csv`](data/reasoning_error_guide.csv), and
+[`excluded_resources.csv`](data/excluded_resources.csv). This file is a
 human-readable rendering of those.
 
 ## Reasoning representation levels (R0–R5)
@@ -86,30 +87,24 @@ remove these the way pure-R0 entries are removed.
 
 These were checked and found to be pure R0 (final-answer-only, nothing on
 the survey's central dimension), then removed from `data/inventory.csv`
-per the rule above. Kept here — not as coded rows — so the paper can
-acknowledge the scope boundary by name (a sentence in intro/related-work,
-not a data table) without a reader wondering if a well-known benchmark was
-simply overlooked:
+per the rule above. Machine-readable source of truth is
+[`excluded_resources.csv`](data/excluded_resources.csv); rendered here so
+the paper can acknowledge the scope boundary by name (a sentence in
+intro/related-work, not a data table) without a reader wondering if a
+well-known benchmark was simply overlooked. When a checked row turns out
+to be pure R0, add it to that CSV (not just prose here) so the exclusion
+record stays queryable alongside the inventory.
 
-- **ARC** (2018) — multiple-choice science QA; final answer only.
-- **MedQA** (2020) — multiple-choice medical QA; final answer only.
-- **GPQA** (2023) — graduate-level science QA; final answer only.
-- **OpenBookQA** (2018) — the per-question fact link exists only in a
-  separate file the dataset's own repo calls "Oracle knowledge — a
-  hypothetical setting," not the standard train/dev/test split anyone
-  evaluates on.
-- **TheoremQA** (2023) — public release schema is question/answer/type
-  only; no solution or rationale field exists.
-- **MaCBench** (2024) — dataset card states explicitly: "questions include
-  final answers without rationales."
-- **SciTab** (2023) — only the verdict label ships; no evidence-span or
-  cell-level annotation is released, despite the task's table-reasoning
-  framing.
-- **SciEval** (2024) — objective questions (multiple-choice/fill-in-blank/
-  judgment) are final-answer-only; the "subjective" experimental-data
-  questions are graded manually by the paper's own authors with no
-  released rubric, reference answer, or reasoning trace a downstream user
-  could access.
+| Dataset | Year | Reason for exclusion |
+|---|---|---|
+| [ARC](https://arxiv.org/abs/1803.05457) | 2018 | Multiple-choice science QA; final answer only. |
+| [MedQA](https://arxiv.org/abs/2009.13081) | 2020 | Multiple-choice medical QA; final answer only. |
+| [GPQA](https://arxiv.org/abs/2311.12022) | 2023 | Graduate-level science QA; final answer only. |
+| [OpenBookQA](https://arxiv.org/abs/1809.02789) | 2018 | The per-question fact link exists only in a separate file the dataset's own repo calls "Oracle knowledge — a hypothetical setting," not the standard train/dev/test split anyone evaluates on. |
+| [TheoremQA](https://arxiv.org/abs/2305.12524) | 2023 | Public release schema is question/answer/type only; no solution or rationale field exists. |
+| [MaCBench](https://huggingface.co/datasets/jablonkagroup/MaCBench) | 2024 | Dataset card states explicitly: "questions include final answers without rationales." |
+| [SciTab](https://arxiv.org/abs/2305.13186) | 2023 | Only the verdict label ships; no evidence-span or cell-level annotation is released despite the task's table-reasoning framing. |
+| [SciEval](https://arxiv.org/abs/2308.13149) | 2024 | Objective questions (multiple-choice/fill-in-blank/judgment) are final-answer-only; the "subjective" experimental-data questions are graded manually by the paper's own authors with no released rubric, reference answer, or reasoning trace a downstream user could access. |
 
 ## Task taxonomy
 
